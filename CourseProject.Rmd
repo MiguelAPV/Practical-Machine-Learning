@@ -1,7 +1,7 @@
 
-#####################################################################
-############## Practical Machine learning Project ###################
-#####################################################################
+
+# Practical Machine learning Project
+
 
 
 #####---Miguel Andres Porro ---#####
@@ -19,7 +19,7 @@ library(randomForest)
 set.seed(3006)
 
 
-####### Downloading and reading the Data ########
+#Downloading and reading the Data 
 
 
 download.file('https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv', 'training.csv', method ="curl")
@@ -31,7 +31,7 @@ finalTest <- read.csv('testing.csv', na.strings = c("","NA","#DIV/0!"))
 
 
 
-######## Creating training and test set ###########
+# Creating training and test set 
 
 
 inTrain <- createDataPartition(pmlTrainingData$classe, p=.7, list=FALSE)
@@ -41,14 +41,14 @@ testing <- pmlTrainingData[-inTrain,]
 summary(training$classe)
 
 
-######## Cleaning the Data ########
+# Cleaning the Data 
 
 
 training <- training[, -c(1:7)]
 testing <- testing[, -c(1:7)]
 finalTest <- finalTest[, -c(1:7)]
 
-## removing missing values. NAs and blank fields 
+# removing missing values. NAs and blank fields 
 
 mostlyNAs <- which(colSums(is.na(training)) > nrow(training)/2)
 training <- training[, -mostlyNAs]
@@ -58,7 +58,6 @@ finalTest <- finalTest[, -mostlyNAs]
 
 
 ######## Machine Learning ##########
-####################################
 
 
 
