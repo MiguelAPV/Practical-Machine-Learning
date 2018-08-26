@@ -117,6 +117,10 @@ percent(rfAccuracy)
 
 percent(1.00-rfAccuracy)
 
+#Conclusion
+
+The random forest model performed much better that rpart model, the accuracy is much greater!!
+
 submissionPreds <- predict(rfModelFit, newdata=finalTest)
 
 submissionPreds
