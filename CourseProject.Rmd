@@ -118,4 +118,5 @@ percent(rfAccuracy)
 percent(1.00-rfAccuracy)
 
 submissionPreds <- predict(rfModelFit, newdata=finalTest)
+
 submissionPreds
